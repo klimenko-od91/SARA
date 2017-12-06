@@ -1,2 +1,2 @@
 # SARA
- R-based application for Structure-Activity Relationship analysis. The manual is in the .rar archive. The new 1.1 version, that was described in Molecular Informatics publication, is available.
+ R-based application for Structure-Activity Relationship analysis. The manual is in the .rar archive. The 1.1 version, that was described in Molecular Informatics publication, and the new 1.2 are available. The 1.2  simply uses Euclidean distance instead of natural logarithm of Euclidean distance in SALId calculations to avoid  negative value of the index. Also, the latest version allows calculating SALI/SALId for all possible pairs in the dataset and has an option to select threshold values for activity cliff determianation. 
