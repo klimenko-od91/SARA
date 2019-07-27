@@ -1,2 +1,10 @@
 # SARA
  R-based application for Structure-Activity Relationship analysis. The manual is in the .rar archive. The 1.1 version, that was described in Molecular Informatics publication, and the new 1.2 are available. The 1.2  simply uses Euclidean distance instead of natural logarithm of Euclidean distance in SALId calculations to avoid  negative value of the index. Also, the latest version allows calculating SALI/SALId for all possible pairs in the dataset and has an option to select threshold values for activity cliff determianation. 
+ 
+28/07/2019
+ 
+ A new 1.3 version is released:
+-	Tanimoto & Distance matrices calculations have been updated so that it is possible to process larger datasets. Update also increases the calculation speed for the Tanimoto coefficient but decreases the one for the Euclidean distance. The speed can be increased considerably by using GPU. For example, gpuR package for R can be used to turn Tanimoto_matrix or Distance_matrix from Tanimoto_matrix.R and DistanceMatrix.R, respectively, into an gpuMatrix of the same dimensionality, which can improve the calculation time considerable, if a chosen GPU device is of high-quality.
+-	Descriptor scaling feature was added. The linear scaling is done according to Aksoy S & Haralick RM “Feature normalization and likelihood-based similarity measures for image retrieval”, Pattern Recognition Letters, V. 22, 5, p. 563 – 582. WARNING: Tanimoto coefficient cannot be computed correctly if scaling by unit variance resulted in negative values for any descriptors! Also, NaN values can be seen for some descriptors after normalisation – this indicates that descriptor has a constant value for all substances in a dataset. Such descriptors are discarded during similarity calculations.
+-	Calculations for Reference compound option in v1.3 no longer need a Tanimoto/Distance matrix, as in v1.2; only reference compound vs all dataset calculations are done, similar to the v1.1 calculations, but at increased speed.
+-	The caption for SALI distribution graphs was changed to the one that reflects the X-axis values more precise.
